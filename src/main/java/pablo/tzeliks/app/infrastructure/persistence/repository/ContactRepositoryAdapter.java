@@ -9,11 +9,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public class ContactRepositoryImpl implements ContactRepositoryPort {
+public class ContactRepositoryAdapter implements ContactRepositoryPort {
 
     JpaContactRepository repository;
 
-    public ContactRepositoryImpl(JpaContactRepository repository) {
+    public ContactRepositoryAdapter(JpaContactRepository repository) {
         this.repository = repository;
     }
 
