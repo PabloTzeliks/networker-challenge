@@ -14,8 +14,8 @@ public class Contact {
     private final Instant createdAt;
     private Instant updatedAt;
 
-    public Contact(UUID id, UUID ownerId, String name, String phoneNumber) {
-        this.id = id;
+    public Contact(UUID ownerId, String name, String phoneNumber) {
+        this.id = UUID.randomUUID();
         this.ownerId = ownerId;
         this.name = name;
         this.phoneNumber = phoneNumber;
