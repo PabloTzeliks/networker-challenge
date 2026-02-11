@@ -1,8 +1,8 @@
-package pablo.tzeliks.app.infrastructure.persistence.repository;
+package pablo.tzeliks.app.infrastructure.persistence.contact.repository;
 
 import org.springframework.stereotype.Repository;
-import pablo.tzeliks.app.domain.entity.Contact;
-import pablo.tzeliks.app.domain.ports.ContactRepositoryPort;
+import pablo.tzeliks.app.domain.contact.model.Contact;
+import pablo.tzeliks.app.domain.contact.ports.ContactRepositoryPort;
 
 import java.util.List;
 import java.util.Optional;

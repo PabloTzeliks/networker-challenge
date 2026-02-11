@@ -1,6 +1,6 @@
-package pablo.tzeliks.app.domain.ports;
+package pablo.tzeliks.app.domain.contact.ports;
 
-import pablo.tzeliks.app.domain.entity.Contact;
+import pablo.tzeliks.app.domain.contact.model.Contact;
 
 import java.util.List;
 import java.util.Optional;

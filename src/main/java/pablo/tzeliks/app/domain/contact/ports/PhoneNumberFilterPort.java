@@ -1,4 +1,4 @@
-package pablo.tzeliks.app.domain.ports;
+package pablo.tzeliks.app.domain.contact.ports;
 
 public interface PhoneNumberFilterPort {
 

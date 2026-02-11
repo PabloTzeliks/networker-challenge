@@ -1,7 +1,7 @@
 package pablo.tzeliks.app.infrastructure.filter;
 
 import org.springframework.stereotype.Component;
-import pablo.tzeliks.app.domain.ports.PhoneNumberFilterPort;
+import pablo.tzeliks.app.domain.contact.ports.PhoneNumberFilterPort;
 import pablo.tzeliks.app.infrastructure.exception.FilterException;
 
 @Component

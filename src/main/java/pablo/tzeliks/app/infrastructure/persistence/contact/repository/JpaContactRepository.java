@@ -1,7 +1,7 @@
-package pablo.tzeliks.app.infrastructure.persistence.repository;
+package pablo.tzeliks.app.infrastructure.persistence.contact.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pablo.tzeliks.app.domain.entity.Contact;
+import pablo.tzeliks.app.domain.contact.model.Contact;
 
 import java.util.Optional;
 import java.util.UUID;

@@ -4,10 +4,8 @@ import org.springframework.stereotype.Service;
 import pablo.tzeliks.app.application.dto.ContactResponse;
 import pablo.tzeliks.app.application.dto.CreateContactRequest;
 import pablo.tzeliks.app.application.mapper.ContactDtoMapper;
-import pablo.tzeliks.app.domain.entity.Contact;
-import pablo.tzeliks.app.domain.ports.ContactRepositoryPort;
-
-import java.util.UUID;
+import pablo.tzeliks.app.domain.contact.model.Contact;
+import pablo.tzeliks.app.domain.contact.ports.ContactRepositoryPort;
 
 @Service
 public class AddContactUseCase {

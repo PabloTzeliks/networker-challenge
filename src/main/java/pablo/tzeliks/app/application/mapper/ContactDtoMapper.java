@@ -3,11 +3,10 @@ package pablo.tzeliks.app.application.mapper;
 import org.springframework.stereotype.Component;
 import pablo.tzeliks.app.application.dto.ContactResponse;
 import pablo.tzeliks.app.application.dto.CreateContactRequest;
-import pablo.tzeliks.app.domain.entity.Contact;
-import pablo.tzeliks.app.domain.ports.PhoneNumberFilterPort;
+import pablo.tzeliks.app.domain.contact.model.Contact;
+import pablo.tzeliks.app.domain.contact.ports.PhoneNumberFilterPort;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Component
 public class ContactDtoMapper {
