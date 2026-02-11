@@ -4,8 +4,11 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import pablo.tzeliks.app.domain.user.model.User;
 import pablo.tzeliks.app.domain.user.ports.UserRepositoryPort;
 
 import java.io.IOException;
@@ -25,12 +28,30 @@ public class SecurityFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        var login = this.recoverToken(request);
+        var token = this.recoverToken(request);
 
-        if (!login.isEmpty()) {
+        if (token != null) {
 
+            var login = tokenService.validateToken(token);
 
+            if (!login.isEmpty()) {
+
+                User user = repositoryPort.findByUsername(login)
+                        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+                CustomUserDetails userDetails = new CustomUserDetails(user);
+
+                var authentication = new UsernamePasswordAuthenticationToken(
+                        userDetails,
+                        null,
+                        userDetails.getAuthorities()
+                );
+
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
         }
+
+        filterChain.doFilter(request, response);
     }
 
     private String recoverToken(HttpServletRequest request) {
