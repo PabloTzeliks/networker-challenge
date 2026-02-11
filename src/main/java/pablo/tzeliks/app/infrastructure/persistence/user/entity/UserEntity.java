@@ -1,4 +1,4 @@
-package pablo.tzeliks.app.infrastructure.persistence.user;
+package pablo.tzeliks.app.infrastructure.persistence.user.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

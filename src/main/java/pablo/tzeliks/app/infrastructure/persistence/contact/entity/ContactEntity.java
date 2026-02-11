@@ -2,7 +2,6 @@ package pablo.tzeliks.app.infrastructure.persistence.contact.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.domain.Persistable;
 
 import java.time.Instant;
