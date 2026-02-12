@@ -11,29 +11,29 @@ import java.time.LocalDateTime;
 @Component
 public class ContactDtoMapper {
 
-    private PhoneNumberFilterPort phoneNumberFilter;
-
-    public ContactDtoMapper(PhoneNumberFilterPort phoneNumberFilter) {
-        this.phoneNumberFilter = phoneNumberFilter;
-    }
-
-    public ContactResponse toDto(Contact entity) {
-
-        return new ContactResponse(
-                entity.getId(),
-                entity.getName(),
-                phoneNumberFilter.maximize(entity.getPhoneNumber()),
-                entity.getCreatedAt()
-        );
-    }
-
-    public Contact toEntity(CreateContactRequest request) {
-
-        return new Contact(
-                null,
-                request.name(),
-                phoneNumberFilter.minimize(request.phoneNumber()),
-                LocalDateTime.now()
-        );
-    }
+//    private PhoneNumberFilterPort phoneNumberFilter;
+//
+//    public ContactDtoMapper(PhoneNumberFilterPort phoneNumberFilter) {
+//        this.phoneNumberFilter = phoneNumberFilter;
+//    }
+//
+//    public ContactResponse toDto(Contact entity) {
+//
+//        return new ContactResponse(
+//                entity.getId(),
+//                entity.getName(),
+//                phoneNumberFilter.maximize(entity.getPhoneNumber()),
+//                entity.getCreatedAt()
+//        );
+//    }
+//
+//    public Contact toEntity(CreateContactRequest request) {
+//
+//        return new Contact(
+//                null,
+//                request.name(),
+//                phoneNumberFilter.minimize(request.phoneNumber()),
+//                LocalDateTime.now()
+//        );
+//    }
 }

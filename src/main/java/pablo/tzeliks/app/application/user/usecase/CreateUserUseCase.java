@@ -21,12 +21,14 @@ public class CreateUserUseCase {
 
     public void execute(RegisterRequest request) {
 
-        var user = repositoryPort.findByUsername(request.username()).
-                orElseThrow(() -> new AuthenticationException("Usuário já existe."));
+        if (repositoryPort.findByUsername(request.username()).isPresent()) {
+
+            throw new AuthenticationException("Usuário já existe.");
+        }
 
         var encodedPassword = encoderPort.encode(request.password());
 
-        User newUser = new User(request.username(), request.password());
+        User newUser = new User(request.username(), encodedPassword);
 
         repositoryPort.save(newUser);
     }

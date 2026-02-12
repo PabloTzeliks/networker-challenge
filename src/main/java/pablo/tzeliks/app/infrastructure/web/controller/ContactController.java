@@ -20,11 +20,11 @@ public class ContactController {
         this.addContact = addContact;
     }
 
-    @PostMapping("/")
-    public ResponseEntity<ContactResponse> add(@Valid @RequestBody CreateContactRequest request) {
-
-        ContactResponse response = addContact.execute(request);
-
-        return ResponseEntity.ok(response);
-    }
+//    @PostMapping("/")
+//    public ResponseEntity<ContactResponse> add(@Valid @RequestBody CreateContactRequest request) {
+//
+//        ContactResponse response = addContact.execute(request);
+//
+//        return ResponseEntity.ok(response);
+//    }
 }

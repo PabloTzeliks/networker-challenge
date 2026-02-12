@@ -28,8 +28,13 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         .requestMatchers(HttpMethod.POST, "/users").permitAll()
+                        .requestMatchers("/h2-console/**").permitAll() // Provisório para H2
                         .anyRequest().authenticated()
                 )
+
+                // Provisório para H2
+                .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()))
+
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
