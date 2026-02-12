@@ -1,8 +1,8 @@
-package pablo.tzeliks.app.application.contact.dto.auth;
+package pablo.tzeliks.app.application.user.dto.auth;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record LoginRequest(
+public record RegisterRequest(
         @NotBlank(message = "Username é obrigatório") String username,
         @NotBlank(message = "Password é obrigatório") String password
 ) { }
