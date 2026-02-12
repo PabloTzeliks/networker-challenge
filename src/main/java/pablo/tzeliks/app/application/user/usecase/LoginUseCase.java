@@ -24,11 +24,11 @@ public class LoginUseCase {
     public LoginResponse execute(LoginRequest request) {
 
         var user = repositoryPort.findByUsername(request.username()).
-                orElseThrow(() -> new AuthenticationException("Usuário não encontrado!"));
+                orElseThrow(() -> new AuthenticationException("Usuário não encontrado."));
 
         if (!encoderPort.matches(request.password(), user.getPassword())) {
 
-            throw new AuthenticationException("Credenciais Inválidas");
+            throw new AuthenticationException("Credenciais Inválidas.");
         }
 
         var newToken = tokenPort.generate(user);
