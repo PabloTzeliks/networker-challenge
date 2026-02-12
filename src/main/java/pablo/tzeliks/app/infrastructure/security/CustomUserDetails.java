@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import pablo.tzeliks.app.domain.user.model.User;
 
 import java.util.Collection;
-import java.util.List;
 
 public class CustomUserDetails implements UserDetails {
 

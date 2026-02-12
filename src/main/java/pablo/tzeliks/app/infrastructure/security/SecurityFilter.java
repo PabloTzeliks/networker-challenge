@@ -32,7 +32,7 @@ public class SecurityFilter extends OncePerRequestFilter {
 
         if (token != null) {
 
-            var login = tokenService.validateToken(token);
+            var login = tokenService.validate(token);
 
             if (!login.isEmpty()) {
 
