@@ -8,6 +8,8 @@ import pablo.tzeliks.app.domain.contact.model.Contact;
 import pablo.tzeliks.app.domain.contact.ports.ContactRepositoryPort;
 import pablo.tzeliks.app.domain.contact.ports.PhoneNumberLogicPort;
 
+import java.util.UUID;
+
 @Service
 public class AddContactUseCase {
 
@@ -21,12 +23,9 @@ public class AddContactUseCase {
         this.phoneLogicPort = phoneLogicPort;
     }
 
-    public ContactResponse execute(CreateContactRequest request) {
+    public ContactResponse execute(CreateContactRequest request, UUID ownerId) {
 
-        Contact contact = mapper.toEntity(request);
+        Contact newContact = ;
 
-        Contact saved = repository.save(contact);
-
-        return mapper.toDto(saved);
     }
 }
