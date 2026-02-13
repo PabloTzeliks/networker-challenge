@@ -11,6 +11,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import pablo.tzeliks.app.application.contact.dto.ContactResponse;
 import pablo.tzeliks.app.application.contact.dto.CreateContactRequest;
 import pablo.tzeliks.app.application.contact.usecase.AddContactUseCase;
+import pablo.tzeliks.app.domain.user.model.User;
 
 @RestController
 @RequestMapping("api/contact")
@@ -23,11 +24,11 @@ public class ContactController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<ContactResponse> add(@Valid @RequestBody CreateContactRequest request
+    public ResponseEntity<ContactResponse> add(@Valid @RequestBody CreateContactRequest request,
                                                @AuthenticationPrincipal User user,
                                                UriComponentsBuilder uriBuilder) {
 
-        ContactResponse response = addContact.execute(request, user.getId);
+        ContactResponse response = addContact.execute(request, user.getId());
 
         var uri = uriBuilder.path("/contacts/{id}").buildAndExpand(response.id()).toUri();
 
