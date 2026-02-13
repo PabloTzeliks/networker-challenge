@@ -14,7 +14,7 @@ import pablo.tzeliks.app.application.contact.usecase.AddContactUseCase;
 import pablo.tzeliks.app.domain.user.model.User;
 
 @RestController
-@RequestMapping("api/contact")
+@RequestMapping("contacts")
 public class ContactController {
 
     private AddContactUseCase addContact;
@@ -23,7 +23,7 @@ public class ContactController {
         this.addContact = addContact;
     }
 
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<ContactResponse> add(@Valid @RequestBody CreateContactRequest request,
                                                @AuthenticationPrincipal User user,
                                                UriComponentsBuilder uriBuilder) {
