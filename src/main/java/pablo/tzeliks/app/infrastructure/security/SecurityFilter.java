@@ -8,6 +8,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import pablo.tzeliks.app.domain.exception.generics.UserNotFoundException;
 import pablo.tzeliks.app.domain.user.model.User;
 import pablo.tzeliks.app.domain.user.ports.UserRepositoryPort;
 
@@ -37,7 +38,7 @@ public class SecurityFilter extends OncePerRequestFilter {
             if (!login.isEmpty()) {
 
                 User user = repositoryPort.findByUsername(login)
-                        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+                        .orElseThrow(() -> new UserNotFoundException("Usuário não encontrado"));
 
                 CustomUserDetails userDetails = new CustomUserDetails(user);
 

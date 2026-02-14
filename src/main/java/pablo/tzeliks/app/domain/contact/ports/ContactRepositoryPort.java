@@ -10,11 +10,11 @@ public interface ContactRepositoryPort {
 
     Contact save(Contact contact);
 
-    Optional<Contact> findById(UUID id);
-
     List<Contact> findAllByOwnerId(UUID ownerId);
 
     Optional<Contact> findByIdAndOwnerId(UUID id, UUID ownerId);
+
+    void delete(Contact contact);
 
     boolean existsByOwnerIdAndPhoneNumber(UUID ownerId, String phoneNumber);
 }

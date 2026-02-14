@@ -34,13 +34,6 @@ public class ContactRepositoryAdapter implements ContactRepositoryPort {
     }
 
     @Override
-    public Optional<Contact> findById(UUID id) {
-
-        return repository.findById(id)
-                .map(mapper::toDomain);
-    }
-
-    @Override
     public List<Contact> findAllByOwnerId(UUID ownerId) {
 
         return repository.findAllByOwnerId(ownerId)
@@ -54,6 +47,12 @@ public class ContactRepositoryAdapter implements ContactRepositoryPort {
 
         return repository.findByIdAndOwnerId(id, ownerId)
                 .map(mapper::toDomain);
+    }
+
+    @Override
+    public void delete(Contact contact) {
+
+        repository.deleteById(contact.getId());
     }
 
     @Override
