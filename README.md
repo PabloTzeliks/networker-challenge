@@ -107,8 +107,8 @@ graph TB
     Client -->|"8️⃣ GET/POST/PUT/DELETE /contacts<br/>Authorization: Bearer {JWT}"| SecurityFilter
     SecurityFilter -->|"9️⃣ Validate Token"| TokenLogicAdapter
     SecurityFilter -->|"🔟 Load User"| UserRepoPort
-    SecurityFilter -->|"1️⃣1️⃣ Authenticated Request"| ContactController
-    ContactController -->|"1️⃣2️⃣ Execute Business Logic"| AddContactUseCase
+    SecurityFilter -->|"11. Authenticated Request"| ContactController
+    ContactController -->|"12. Execute Business Logic"| AddContactUseCase
     ContactController --> SearchContactsUseCase
     ContactController --> UpdateContactUseCase
     ContactController --> DeleteContactUseCase
