@@ -177,7 +177,7 @@ http://localhost:8080/swagger-ui.html
 ./mvnw clean package
 
 # Executar JAR gerado
-java -jar target/app-1.0.0.jar
+java -jar target/*.jar
 ```
 
 ---
