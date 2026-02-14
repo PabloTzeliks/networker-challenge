@@ -55,7 +55,9 @@ public class ContactController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ContactResponse> update(@RequestBody UpdateContactRequest request, @AuthenticationPrincipal CustomUserDetails userDetails, @PathVariable UUID id) {
+    public ResponseEntity<ContactResponse> update(@RequestBody UpdateContactRequest request,
+                                                  @AuthenticationPrincipal CustomUserDetails userDetails,
+                                                  @PathVariable UUID id) {
 
         return ResponseEntity.ok().body(updateContact.execute(request, id, userDetails.getDomainUser().getId()));
     }
