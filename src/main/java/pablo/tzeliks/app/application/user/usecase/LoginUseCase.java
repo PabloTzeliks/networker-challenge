@@ -3,7 +3,7 @@ package pablo.tzeliks.app.application.user.usecase;
 import org.springframework.stereotype.Service;
 import pablo.tzeliks.app.application.user.dto.auth.LoginRequest;
 import pablo.tzeliks.app.application.user.dto.auth.LoginResponse;
-import pablo.tzeliks.app.domain.contact.exception.AuthenticationException;
+import pablo.tzeliks.app.domain.exception.generics.AuthenticationException;
 import pablo.tzeliks.app.domain.user.ports.PasswordEncoderPort;
 import pablo.tzeliks.app.domain.user.ports.TokenLogicPort;
 import pablo.tzeliks.app.domain.user.ports.UserRepositoryPort;

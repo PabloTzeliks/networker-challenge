@@ -1,6 +1,6 @@
 package pablo.tzeliks.app.domain.contact.model;
 
-import pablo.tzeliks.app.domain.contact.exception.BusinessRuleException;
+import pablo.tzeliks.app.domain.exception.generics.BusinessRuleException;
 
 import java.time.Instant;
 import java.util.UUID;

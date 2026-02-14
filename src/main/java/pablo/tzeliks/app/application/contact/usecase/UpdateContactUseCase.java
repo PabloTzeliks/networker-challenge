@@ -1,8 +1,12 @@
 package pablo.tzeliks.app.application.contact.usecase;
 
 import pablo.tzeliks.app.application.contact.dto.ContactResponse;
+import pablo.tzeliks.app.application.contact.dto.UpdateContactRequest;
 import pablo.tzeliks.app.application.contact.mapper.ContactDtoMapper;
 import pablo.tzeliks.app.domain.contact.ports.ContactRepositoryPort;
+import pablo.tzeliks.app.domain.exception.ResourceNotFoundException;
+
+import java.util.UUID;
 
 public class UpdateContactUseCase {
 
@@ -14,5 +18,11 @@ public class UpdateContactUseCase {
         this.repositoryPort = repositoryPort;
     }
 
-    public ContactResponse execute()
+    public ContactResponse execute(UpdateContactRequest request, UUID id, UUID ownerId) {
+
+        var contact = repositoryPort.findByIdAndOwnerId(id, ownerId)
+                .orElseThrow(() -> new ResourceNotFoundException("Contato não encontrado."));
+
+
+    }
 }

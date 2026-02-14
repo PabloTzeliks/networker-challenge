@@ -7,9 +7,5 @@ public record UpdateContactRequest(
 
         @JsonProperty("name")
         @NotNull(message = "Nome é obrigatório")
-        String name,
-
-        @JsonProperty("phone_number")
-        @NotNull(message = "Número de Telefone é obrigatório")
-        String phoneNumber
+        String name
 ) { }

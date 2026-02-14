@@ -1,4 +1,4 @@
-package pablo.tzeliks.app.domain.contact.exception;
+package pablo.tzeliks.app.domain.exception.generics;
 
 public class AuthenticationException extends RuntimeException {
     public AuthenticationException(String message) {
