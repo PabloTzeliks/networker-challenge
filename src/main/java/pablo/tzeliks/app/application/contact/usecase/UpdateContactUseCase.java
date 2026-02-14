@@ -1,5 +1,6 @@
 package pablo.tzeliks.app.application.contact.usecase;
 
+import org.springframework.stereotype.Service;
 import pablo.tzeliks.app.application.contact.dto.ContactResponse;
 import pablo.tzeliks.app.application.contact.dto.UpdateContactRequest;
 import pablo.tzeliks.app.application.contact.mapper.ContactDtoMapper;
@@ -8,6 +9,7 @@ import pablo.tzeliks.app.domain.exception.ResourceNotFoundException;
 
 import java.util.UUID;
 
+@Service
 public class UpdateContactUseCase {
 
     private final ContactDtoMapper mapper;
