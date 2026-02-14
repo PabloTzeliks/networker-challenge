@@ -106,7 +106,7 @@ graph TB
     %% Protected Endpoints Flow (Contacts)
     Client -->|"8️⃣ GET/POST/PUT/DELETE /contacts<br/>Authorization: Bearer {JWT}"| SecurityFilter
     SecurityFilter -->|"9️⃣ Validate Token"| TokenLogicAdapter
-    SecurityFilter -->|"🔟 Load User"| UserRepoPort
+    SecurityFilter -->|"10. Load User"| UserRepoPort
     SecurityFilter -->|"11. Authenticated Request"| ContactController
     ContactController -->|"12. Execute Business Logic"| AddContactUseCase
     ContactController --> SearchContactsUseCase
