@@ -23,6 +23,8 @@ public class UpdateContactUseCase {
         var contact = repositoryPort.findByIdAndOwnerId(id, ownerId)
                 .orElseThrow(() -> new ResourceNotFoundException("Contato não encontrado."));
 
+        contact.updateName(request.name());
 
+        return mapper.toDto(repositoryPort.save(contact));
     }
 }
